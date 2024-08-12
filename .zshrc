@@ -47,7 +47,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Aliases
-alias ls='ls --color'
+alias ls='ls -a --color'
 
 # Some extra PATH stuff from .bashrc just in case
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
