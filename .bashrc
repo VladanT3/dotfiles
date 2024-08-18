@@ -116,6 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Path
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=$PATH:/usr/local/go/bin
 . "$HOME/.cargo/env"
+export PATH=$PATH:/home/vladan/.local/bin

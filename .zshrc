@@ -21,9 +21,6 @@ autoload -U compinit && compinit
 # Optimizes loading completions i think
 zinit cdreplay -q
 
-# Oh-My-Posh initialization
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/custom.toml)"
-
 # Keybind for accepting auto-suggestion
 bindkey '^f' autosuggest-accept
 bindkey '^p' history-search-backward
@@ -49,7 +46,11 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # Aliases
 alias ls='ls -a --color'
 
-# Some extra PATH stuff from .bashrc just in case
+# PATH
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=$PATH:/usr/local/go/bin
 . "$HOME/.cargo/env"
+export PATH=$PATH:/home/vladan/.local/bin
+
+# Oh-My-Posh initialization
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.toml)"
