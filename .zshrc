@@ -51,6 +51,5 @@ alias ls='ls -a --color'
 
 # Some extra PATH stuff from .bashrc just in case
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 . "$HOME/.cargo/env"

@@ -14,3 +14,8 @@ The dotfiles dir has to have the same structure as your home dir.
 Example:
 If you have a dotfile in home/.config/your_dir/.your_config
 Then dotfiles has to look like: dotfiles/.config/your_dir/.your_config
+
+For TMUX:
+-You will have to clone the tmux plugin manager first onto you system for everything to work:
+-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+-Open tmux and click <prefix> + I (Ctrl + b + I)
