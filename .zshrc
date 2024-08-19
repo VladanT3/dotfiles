@@ -48,9 +48,11 @@ alias ls='ls -a --color'
 
 # PATH
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-export PATH=$PATH:/usr/local/go/bin
+# Keep the go path like this and install it with homebrew if you value your life
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+# end of go path
 . "$HOME/.cargo/env"
-export PATH=$PATH:/home/vladan/.local/bin
 
 # Oh-My-Posh initialization
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.toml)"
