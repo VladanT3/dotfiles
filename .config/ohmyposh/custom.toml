@@ -8,13 +8,27 @@ console_title_template = '{{ .Folder }}'
   type = 'prompt'
   alignment = 'left'
   newline = true
+  
+  [[blocks.segments]]
+    type = 'session'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'lightGreen'
+    template = '{{ .UserName }}'
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'lightWhite'
+    template = ': '
 
   [[blocks.segments]]
     type = 'path'
     style = 'plain'
     background = 'transparent'
-    foreground = 'blue'
-    template = '{{ .Path }}'
+    foreground = 'lightBlue'
+    template = '{{ .Path }} '
 
     [blocks.segments.properties]
       style = 'full'
@@ -22,9 +36,9 @@ console_title_template = '{{ .Folder }}'
   [[blocks.segments]]
     type = 'git'
     style = 'plain'
-    foreground = 'p:grey'
     background = 'transparent'
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    foreground = 'darkGray'
+    template = '{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <lightCyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
 
     [blocks.segments.properties]
       branch_icon = ''
@@ -32,43 +46,28 @@ console_title_template = '{{ .Folder }}'
       fetch_status = true
 
 [[blocks]]
-  type = 'rprompt'
-  overflow = 'hidden'
-
-  [[blocks.segments]]
-    type = 'executiontime'
-    style = 'plain'
-    foreground = 'yellow'
-    background = 'transparent'
-    template = '{{ .FormattedMs }}'
-
-    [blocks.segments.properties]
-      threshold = 5000
-
-[[blocks]]
   type = 'prompt'
   alignment = 'left'
-  newline = true
 
   [[blocks.segments]]
     type = 'text'
     style = 'plain'
     foreground_templates = [
-      "{{if gt .Code 0}}red{{end}}",
-      "{{if eq .Code 0}}magenta{{end}}",
+      "{{if gt .Code 0}}lightRed{{end}}",
+      "{{if eq .Code 0}}lightMagenta{{end}}",
     ]
     background = 'transparent'
-    template = '❯'
+    template = '>'
 
 [transient_prompt]
   foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}magenta{{end}}",
+    "{{if gt .Code 0}}lightRed{{end}}",
+    "{{if eq .Code 0}}lightMagenta{{end}}",
   ]
   background = 'transparent'
-  template = '❯ '
+  template = '>'
 
 [secondary_prompt]
-  foreground = 'magenta'
+  foreground = 'lightMagenta'
   background = 'transparent'
-  template = '❯❯ '
+  template = '>>'
