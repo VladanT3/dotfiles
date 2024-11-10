@@ -19,11 +19,25 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
+    style = 'plain'
     template = '{{ .UserName }}'
     foreground = 'lightGreen'
     background = 'transparent'
     type = 'session'
+
+  [[blocks.segments]]
     style = 'plain'
+    template = ': '
+    foreground = 'lightWhite'
+    background = 'transparent'
+    type = 'text'
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = '{{ .Path }} '
+    foreground = 'lightBlue'
+    background = 'transparent'
+    type = 'path'
 
     [blocks.segments.properties]
       cache_duration = 'none'
@@ -50,11 +64,11 @@ final_space = true
       style = 'full'
 
   [[blocks.segments]]
+    style = 'plain'
     template = '{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <lightCyan>{{ if gt .Behind 0 }}⇣ {{ end }}{{ if gt .Ahead 0 }}⇡ {{ end }}</>'
     foreground = 'darkGray'
     background = 'transparent'
     type = 'git'
-    style = 'plain'
 
     [blocks.segments.properties]
       branch_icon = ''
@@ -67,11 +81,8 @@ final_space = true
   alignment = 'left'
 
   [[blocks.segments]]
+    style = 'plain'
     template = '>'
     background = 'transparent'
     type = 'text'
-    style = 'plain'
     foreground_templates = ['{{if gt .Code 0}}lightRed{{end}}', '{{if eq .Code 0}}lightMagenta{{end}}']
-
-    [blocks.segments.properties]
-      cache_duration = 'none'
