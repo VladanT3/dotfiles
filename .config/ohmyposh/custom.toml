@@ -41,26 +41,6 @@ final_space = true
 
     [blocks.segments.properties]
       cache_duration = 'none'
-
-  [[blocks.segments]]
-    template = ': '
-    foreground = 'lightWhite'
-    background = 'transparent'
-    type = 'text'
-    style = 'plain'
-
-    [blocks.segments.properties]
-      cache_duration = 'none'
-
-  [[blocks.segments]]
-    template = '{{ .Path }} '
-    foreground = 'lightBlue'
-    background = 'transparent'
-    type = 'path'
-    style = 'plain'
-
-    [blocks.segments.properties]
-      cache_duration = 'none'
       style = 'full'
 
   [[blocks.segments]]
