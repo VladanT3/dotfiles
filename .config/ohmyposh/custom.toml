@@ -1,45 +1,53 @@
-#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
-
-version = 2
-final_space = true
 console_title_template = '{{ .Folder }}'
+version = 3
 auto_upgrade = true
+final_space = true
+
+[secondary_prompt]
+  template = '>>'
+  foreground = 'lightMagenta'
+  background = 'transparent'
+
+[transient_prompt]
+  template = '>'
+  background = 'transparent'
+  foreground_templates = ['{{if gt .Code 0}}lightRed{{end}}', '{{if eq .Code 0}}lightMagenta{{end}}']
 
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
   newline = true
-  
+
   [[blocks.segments]]
-    type = 'session'
     style = 'plain'
-    background = 'transparent'
-    foreground = 'lightGreen'
     template = '{{ .UserName }}'
+    foreground = 'lightGreen'
+    background = 'transparent'
+    type = 'session'
 
   [[blocks.segments]]
-    type = 'text'
     style = 'plain'
-    background = 'transparent'
-    foreground = 'lightWhite'
     template = ': '
+    foreground = 'lightWhite'
+    background = 'transparent'
+    type = 'text'
 
   [[blocks.segments]]
-    type = 'path'
     style = 'plain'
-    background = 'transparent'
-    foreground = 'lightBlue'
     template = '{{ .Path }} '
+    foreground = 'lightBlue'
+    background = 'transparent'
+    type = 'path'
 
     [blocks.segments.properties]
       style = 'full'
 
   [[blocks.segments]]
-    type = 'git'
     style = 'plain'
-    background = 'transparent'
-    foreground = 'darkGray'
     template = '{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <lightCyan>{{ if gt .Behind 0 }}⇣ {{ end }}{{ if gt .Ahead 0 }}⇡ {{ end }}</>'
+    foreground = 'darkGray'
+    background = 'transparent'
+    type = 'git'
 
     [blocks.segments.properties]
       branch_icon = ''
@@ -51,24 +59,8 @@ auto_upgrade = true
   alignment = 'left'
 
   [[blocks.segments]]
-    type = 'text'
     style = 'plain'
-    foreground_templates = [
-      "{{if gt .Code 0}}lightRed{{end}}",
-      "{{if eq .Code 0}}lightMagenta{{end}}",
-    ]
-    background = 'transparent'
     template = '>'
-
-[transient_prompt]
-  foreground_templates = [
-    "{{if gt .Code 0}}lightRed{{end}}",
-    "{{if eq .Code 0}}lightMagenta{{end}}",
-  ]
-  background = 'transparent'
-  template = '>'
-
-[secondary_prompt]
-  foreground = 'lightMagenta'
-  background = 'transparent'
-  template = '>>'
+    background = 'transparent'
+    type = 'text'
+    foreground_templates = ['{{if gt .Code 0}}lightRed{{end}}', '{{if eq .Code 0}}lightMagenta{{end}}']
