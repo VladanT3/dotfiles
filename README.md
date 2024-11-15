@@ -19,3 +19,5 @@ For TMUX:
 -You will have to clone the tmux plugin manager first onto you system for everything to work:
 -git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 -Open tmux and click <prefix> + I (Ctrl + b + I)
+
+... Wrote this for myself because I forget always...
