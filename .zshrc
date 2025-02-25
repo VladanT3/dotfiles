@@ -59,3 +59,8 @@ eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.toml)"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+#Docker things
+FPATH="$HOME/.docker/completions:$FPATH"
+autoload -Uz compinit
+compinit
