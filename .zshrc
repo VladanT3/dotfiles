@@ -60,10 +60,14 @@ eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.toml)"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-#Docker completion
+# Docker completion
 FPATH="$HOME/.docker/completions:$FPATH"
 autoload -Uz compinit
 compinit
 
-#Kubernetes completion
+# Kubernetes completion
 source <(kubectl completion zsh)
+
+# Set default text editor to neovim
+export VISUAL=nvim
+export EDITOR="$VISUAL"
