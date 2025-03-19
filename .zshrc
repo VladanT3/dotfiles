@@ -15,8 +15,11 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
+# Docker completions
+FPATH="$HOME/.docker/completions:$FPATH"
+
 # Load completions on startup
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 
 # Optimizes loading completions i think
 zinit cdreplay -q
@@ -59,11 +62,6 @@ eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.toml)"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
-# Docker completion
-FPATH="$HOME/.docker/completions:$FPATH"
-autoload -Uz compinit
-compinit
 
 # Kubernetes completion
 source <(kubectl completion zsh)
