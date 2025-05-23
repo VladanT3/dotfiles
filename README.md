@@ -1,7 +1,5 @@
 # dotfiles
 
-## dotfiles configs for various configurations made using "stow".
-
 ### Setup:
 -Clone into /home/dotfiles
 -Install stow with a package manager
