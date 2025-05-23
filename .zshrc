@@ -1,7 +1,7 @@
 # Setting the directiry for the zinit plugin manager
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Download zinit if it doesnt exist
+# Download zinit if it doesn't exist
 if [ ! -d "$ZINIT_HOME" ]; then
     mkdir -p "$(dirname $ZINIT_HOME)"
     git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -14,20 +14,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-
-# Docker completions
-FPATH="$HOME/.docker/completions:$FPATH"
-
-# Load completions on startup
-autoload -Uz compinit && compinit
-
-# Optimizes loading completions i think
-zinit cdreplay -q
-
-# Keybind for accepting auto-suggestion
-bindkey '^f' autosuggest-accept
-bindkey '^p' history-search-backward
-bindkey '^p' history-search-forward
 
 # History
 HISTSIZE=5000
@@ -46,25 +32,19 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
+# Load completions on startup
+autoload -Uz compinit && compinit
+
+# Optimizes loading completions
+zinit cdreplay -q
+
 # Aliases
 alias ls='ls -a --color'
 
 # PATH
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# Keep the go path like this and install it with homebrew if you value your life
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-# end of go path
-. "$HOME/.cargo/env"
 
 # Oh-My-Posh initialization
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.toml)"
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
-# Kubernetes completion
-source <(kubectl completion zsh)
 
 # Set default text editor to neovim
 export VISUAL=nvim
