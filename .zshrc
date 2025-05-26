@@ -41,7 +41,11 @@ zinit cdreplay -q
 # Aliases
 alias ls='ls -a --color'
 
+# Source cargo
+. "$HOME/.cargo/env"
+
 # PATH
+export PATH="$HOME/.local/bin:$PATH"
 
 # Oh-My-Posh initialization
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.toml)"

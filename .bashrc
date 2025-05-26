@@ -25,4 +25,4 @@ fi
 unset rc
 
 alias ls='ls -a --color'
-alias openrgb='sudo ./Apps/OpenRGB/OpenRGB.AppImage'
+. "$HOME/.cargo/env"
