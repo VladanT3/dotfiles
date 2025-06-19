@@ -1,13 +1,10 @@
 # dotfiles
 
 ### Setup:
--Clone into /home/dotfiles
-
--Install stow with a package manager
-
--Delete or rename the same files in home dir that you have in dotfiles dir
-
--cd into dotfiles and use command "stow ."
+- Clone into /home/dotfiles
+- Install stow with a package manager
+- Delete or rename the same files in home dir that you have in dotfiles dir
+- cd into dotfiles and use command "stow ."
 
 
 You will now have the files in your home dir but they exist as references to the files in dotfiles dir.
