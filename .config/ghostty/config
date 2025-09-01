@@ -5,6 +5,7 @@ font-size = 12
 bold-is-bright = true
 
 # Theme
+# Gruvbox-Material:
 background = #32302f
 foreground = #d4be98
 palette = 0=#32302f
@@ -72,3 +73,6 @@ keybind = alt+shift+left=move_tab:-1
 keybind = alt+shift+right=move_tab:1
 keybind = alt+x=close_tab
 keybind = alt+q=close_window
+keybind = alt+p=increase_font_size:2
+keybind = alt+m=decrease_font_size:2
+keybind = alt+r=reset_font_size

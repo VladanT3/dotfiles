@@ -19,6 +19,25 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
+    type = 'python'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'lightYellow'
+    template = '{{ if .Venv }}[{{ .Venv }}] {{ end }}'
+
+    [blocks.segments.properties]
+      display_mode = 'environment'
+      fetch_virtual_env = true
+      home_enabled = true
+
+  [[blocks.segments]]
+    type = 'kubectl'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'lightBlue'
+    template = '{{ if .Namespace }}({{ .Namespace }}) {{ end }}'
+
+  [[blocks.segments]]
     style = 'plain'
     template = '{{ .UserName }}'
     foreground = 'lightGreen'
