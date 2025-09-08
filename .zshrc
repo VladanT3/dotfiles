@@ -53,3 +53,11 @@ eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.toml)"
 # Set default text editor to neovim
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+
+# Character movement on plain arrows
+bindkey '^[[C' forward-char
+bindkey '^[[D' backward-char
+
+# Word movement on Ctrl+arrows
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
