@@ -31,6 +31,9 @@ cursor-style = block
 cursor-style-blink = true
 cursor-click-to-move = false
 
+# Mouse
+mouse-hide-while-typing = true
+
 # Split
 unfocused-split-opacity = 1
 split-divider-color = #7daea3
