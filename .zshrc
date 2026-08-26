@@ -39,7 +39,7 @@ autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # Aliases
-alias ls='ls -lA --group-directories-first --color=auto'
+alias ls='ls -lhA --group-directories-first --color=auto'
 
 # Source cargo
 . "$HOME/.cargo/env"
