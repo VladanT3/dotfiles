@@ -45,7 +45,7 @@ alias ls='ls -lhA --group-directories-first --color=auto'
 . "$HOME/.cargo/env"
 
 # PATH
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 
 # Oh-My-Posh initialization
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.toml)"
@@ -61,3 +61,6 @@ bindkey '^[[D' backward-char
 # Word movement on Ctrl+arrows
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
